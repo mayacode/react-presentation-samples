@@ -1,0 +1,25 @@
+{
+  "name": "react-presentation-samples",
+  "version": "1.0.0",
+  "description": "Samples of code used in my presentations",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server -d",
+    "test": "jest --coverage",
+    "eslint": "eslint ."
+  },
+  "author": "Maja Miarecki <maja.miarecki@gmail.com>",
+  "license": "ISC",
+  "jest": {
+    "collectCoverageFrom": ["app/**/*.js"],
+    "coveragePathIgnorePatterns": ["app/index.js", "app/reducers.js"],
+    "testMatch": ["<rootDir>/app/**/?(*.)(spec|test).{js,jsx,mjs}"],
+    "testEnvironment": "node",
+    "setupFiles": ["<rootDir>/config/testSetup.js"]
+  },
+  "dependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {}
+}
