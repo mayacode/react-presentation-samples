@@ -1,21 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import {string, func} from 'prop-types';
 import InputText from '../Input';
 
-export default function Search() {
-  const [searchString, setSearchString] = useState('');
-  // const [bookList, setBookList] = useState([]);
-
-  const onChangeHandler = ev => setSearchString(ev.target.value);
-
-  useEffect(() => {});
+const Search = ({keyword, onChange, title}) => {
   return (
-    <div>
-      <p>Search for book titles, authors or description</p>
+    <>
+      {!!title && <p>{title}</p>}
       <InputText
+        key="input"
         name="search"
-        value={searchString}
-        onChange={onChangeHandler}
+        value={keyword}
+        onChange={onChange}
       />
-    </div>
+    </>
   );
-}
+};
+
+Search.displayName = 'Search';
+
+Search.propTypes = {
+  keyword: string.isRequired,
+  onChange: func.isRequired,
+  title: string,
+};
+
+export default Search;

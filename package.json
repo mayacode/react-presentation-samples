@@ -10,7 +10,7 @@
     "validate": "npm run lint && npm run prettier -- --list-different",
     "precommit": "lint-staged",
     "hooks:build": "webpack --config src/react/hooks/webpack.dev.config.js",
-    "hooks:dev": "webpack-dev-server --config src/react/hooks/webpack.dev.config.js -d"
+    "hooks:dev": "NODE_ENV=dev webpack-dev-server --config src/react/hooks/webpack.dev.config.js -d"
   },
   "repository": {
     "type": "git",
